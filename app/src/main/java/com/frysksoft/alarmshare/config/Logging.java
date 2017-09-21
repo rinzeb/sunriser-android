@@ -1,4 +1,4 @@
-package com.eladnava.sunriser.config;
+package com.frysksoft.alarmshare.config;
 
 public class Logging {
     // Logcat log tag for all app logs

@@ -1,8 +1,8 @@
-package com.eladnava.sunriser.utils;
+package com.frysksoft.alarmshare.utils;
 
 import android.content.Context;
 
-import com.eladnava.sunriser.R;
+import com.frysksoft.alarmshare.R;
 
 public class AppPreferences {
     public static boolean isAppEnabled(Context context) {
@@ -60,12 +60,12 @@ public class AppPreferences {
         return Integer.parseInt(SingletonServices.getSharedPreferences(context).getString(context.getString(R.string.sunrise_headstart_pref), context.getString(R.string.sunrise_headstart_default)));
     }
 
-    public static String getMiLightHost(Context context) {
+    public static String getMqttHost(Context context) {
         // Return MiLight IP address from SharedPreferences (defaults to 255.255.255.255)
         return SingletonServices.getSharedPreferences(context).getString(context.getString(R.string.host_pref), context.getString(R.string.host_default));
     }
 
-    public static int getMiLightPort(Context context) {
+    public static int getMqttPort(Context context) {
         // Return MiLight port from SharedPreferences (defaults to 8899)
         return Integer.parseInt(SingletonServices.getSharedPreferences(context).getString(context.getString(R.string.port_pref), context.getString(R.string.host_default)));
     }

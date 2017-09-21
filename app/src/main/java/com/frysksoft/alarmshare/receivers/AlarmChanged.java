@@ -1,4 +1,4 @@
-package com.eladnava.sunriser.receivers;
+package com.frysksoft.alarmshare.receivers;
 
 import android.app.AlarmManager;
 import android.content.BroadcastReceiver;
@@ -6,8 +6,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
-import com.eladnava.sunriser.config.Logging;
-import com.eladnava.sunriser.scheduler.SunriseScheduler;
+import com.frysksoft.alarmshare.config.Logging;
+import com.frysksoft.alarmshare.scheduler.SunriseScheduler;
 
 public class AlarmChanged extends BroadcastReceiver {
     @Override

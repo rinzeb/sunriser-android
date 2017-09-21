@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.eladnava.sunriser">
+    package="com.frysksoft.alarmshare">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -15,7 +15,7 @@
 
         <!-- Main Activity -->
         <activity
-            android:name=".activities.Main"
+            android:name="com.frysksoft.alarmshare.activities.Main"
             android:label="@string/sunriser"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
@@ -27,35 +27,35 @@
 
         <!-- Settings Activity -->
         <activity
-            android:name=".activities.Settings"
+            android:name="com.frysksoft.alarmshare.activities.Settings"
             android:label="@string/action_settings"
-            android:parentActivityName=".activities.Main">
+            android:parentActivityName="com.frysksoft.alarmshare.activities.Main">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.eladnava.sunriser.activities.Main" />
+                android:value="com.frysksoft.alarmshare.activities.Main" />
         </activity>
 
         <!-- Boot Completed Receiver -->
-        <receiver android:name=".receivers.BootCompleted">
+        <receiver android:name="com.frysksoft.alarmshare.receivers.BootCompleted">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
 
         <!-- Alarm Changed Receiver -->
-        <receiver android:name=".receivers.AlarmChanged">
+        <receiver android:name="com.frysksoft.alarmshare.receivers.AlarmChanged">
             <intent-filter>
                 <action android:name="android.app.action.NEXT_ALARM_CLOCK_CHANGED" />
             </intent-filter>
         </receiver>
 
         <!-- Broadcast Receivers -->
-        <receiver android:name=".receivers.ShowMoonlightReminder" />
-        <receiver android:name=".receivers.HideMoonlightReminder" />
+        <receiver android:name="com.frysksoft.alarmshare.receivers.ShowMoonlightReminder" />
+        <receiver android:name="com.frysksoft.alarmshare.receivers.HideMoonlightReminder" />
 
         <!-- Services -->
-        <service android:name=".services.SunriseService" />
-        <service android:name=".services.MoonlightService" />
-        <service android:name=".services.KillDaylightService" />
+        <service android:name="com.frysksoft.alarmshare.services.SunriseService" />
+        <service android:name="com.frysksoft.alarmshare.services.MoonlightService" />
+        <service android:name="com.frysksoft.alarmshare.services.KillDaylightService" />
     </application>
 </manifest>

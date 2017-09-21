@@ -1,12 +1,12 @@
-package com.eladnava.sunriser.activities;
+package com.frysksoft.alarmshare.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.view.MenuItem;
 
-import com.eladnava.sunriser.R;
-import com.eladnava.sunriser.utils.SingletonServices;
-import com.eladnava.sunriser.utils.compatibility.AppCompatPreferenceActivity;
+import com.frysksoft.alarmshare.R;
+import com.frysksoft.alarmshare.utils.SingletonServices;
+import com.frysksoft.alarmshare.utils.compatibility.AppCompatPreferenceActivity;
 
 public class Settings extends AppCompatPreferenceActivity {
     @Override
@@ -20,9 +20,6 @@ public class Settings extends AppCompatPreferenceActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-
-        // Reset the API client in case we changed any router-related / zone settings
-        SingletonServices.resetMilightAPI();
     }
 
     void displayBackButton() {

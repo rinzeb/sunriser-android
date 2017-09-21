@@ -1,11 +1,11 @@
-package com.eladnava.sunriser.services;
+package com.frysksoft.alarmshare.services;
 
 import android.app.IntentService;
 import android.content.Intent;
 import android.util.Log;
 
-import com.eladnava.sunriser.config.Logging;
-import com.eladnava.sunriser.utils.SingletonServices;
+import com.frysksoft.alarmshare.config.Logging;
+import com.frysksoft.alarmshare.utils.SingletonServices;
 
 public class KillDaylightService extends IntentService {
     public KillDaylightService() {
@@ -20,7 +20,7 @@ public class KillDaylightService extends IntentService {
 
         try {
             // Turn off the bulb since we should have woken up by now
-            SingletonServices.getMilightAPI(this).fadeOut();
+            SingletonServices.getMQTT(this).fadeOut();
         }
         catch (Exception exc) {
             // Log errors to logcat

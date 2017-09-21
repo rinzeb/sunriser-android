@@ -1,4 +1,4 @@
-package com.eladnava.sunriser.utils;
+package com.frysksoft.alarmshare.utils;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

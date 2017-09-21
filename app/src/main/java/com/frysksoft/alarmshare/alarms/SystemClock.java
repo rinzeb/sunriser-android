@@ -1,9 +1,9 @@
-package com.eladnava.sunriser.alarms;
+package com.frysksoft.alarmshare.alarms;
 
 import android.app.AlarmManager;
 import android.content.Context;
 
-import com.eladnava.sunriser.utils.SingletonServices;
+import com.frysksoft.alarmshare.utils.SingletonServices;
 
 public class SystemClock {
     public static long getNextAlarmTriggerTimestamp(Context context) {

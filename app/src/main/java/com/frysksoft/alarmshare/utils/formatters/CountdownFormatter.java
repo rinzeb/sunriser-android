@@ -1,8 +1,8 @@
-package com.eladnava.sunriser.utils.formatters;
+package com.frysksoft.alarmshare.utils.formatters;
 
 import android.content.Context;
 
-import com.eladnava.sunriser.R;
+import com.frysksoft.alarmshare.R;
 
 public class CountdownFormatter {
     public static String getAlarmCountdownText(long startTimestamp, Context context) {

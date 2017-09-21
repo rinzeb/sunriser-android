@@ -1,13 +1,13 @@
-package com.eladnava.sunriser.receivers;
+package com.frysksoft.alarmshare.receivers;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
-import com.eladnava.sunriser.config.Logging;
-import com.eladnava.sunriser.config.Notifications;
-import com.eladnava.sunriser.utils.SingletonServices;
+import com.frysksoft.alarmshare.config.Logging;
+import com.frysksoft.alarmshare.config.Notifications;
+import com.frysksoft.alarmshare.utils.SingletonServices;
 
 public class HideMoonlightReminder extends BroadcastReceiver {
     @Override

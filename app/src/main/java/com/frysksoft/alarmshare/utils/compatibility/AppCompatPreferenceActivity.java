@@ -1,4 +1,4 @@
-package com.eladnava.sunriser.utils.compatibility;
+package com.frysksoft.alarmshare.utils.compatibility;
 
 import android.content.res.Configuration;
 import android.os.Bundle;

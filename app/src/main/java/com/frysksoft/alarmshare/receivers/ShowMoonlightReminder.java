@@ -1,4 +1,4 @@
-package com.eladnava.sunriser.receivers;
+package com.frysksoft.alarmshare.receivers;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -8,14 +8,14 @@ import android.content.Intent;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
-import com.eladnava.sunriser.R;
-import com.eladnava.sunriser.activities.Main;
-import com.eladnava.sunriser.config.Logging;
-import com.eladnava.sunriser.config.Notifications;
-import com.eladnava.sunriser.services.MoonlightService;
-import com.eladnava.sunriser.utils.AppPreferences;
-import com.eladnava.sunriser.utils.Networking;
-import com.eladnava.sunriser.utils.SingletonServices;
+import com.frysksoft.alarmshare.R;
+import com.frysksoft.alarmshare.activities.Main;
+import com.frysksoft.alarmshare.config.Logging;
+import com.frysksoft.alarmshare.config.Notifications;
+import com.frysksoft.alarmshare.services.MoonlightService;
+import com.frysksoft.alarmshare.utils.AppPreferences;
+import com.frysksoft.alarmshare.utils.Networking;
+import com.frysksoft.alarmshare.utils.SingletonServices;
 
 public class ShowMoonlightReminder extends BroadcastReceiver {
     @Override

@@ -1,4 +1,4 @@
-package com.eladnava.sunriser.activities;
+package com.frysksoft.alarmshare.activities;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -12,15 +12,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.eladnava.sunriser.R;
-import com.eladnava.sunriser.alarms.SystemClock;
-import com.eladnava.sunriser.config.Logging;
-import com.eladnava.sunriser.scheduler.SunriseScheduler;
-import com.eladnava.sunriser.services.MoonlightService;
-import com.eladnava.sunriser.services.SunriseService;
-import com.eladnava.sunriser.utils.Networking;
-import com.eladnava.sunriser.utils.SingletonServices;
-import com.eladnava.sunriser.utils.intents.IntentExtras;
+import com.frysksoft.alarmshare.R;
+import com.frysksoft.alarmshare.alarms.SystemClock;
+import com.frysksoft.alarmshare.config.Logging;
+import com.frysksoft.alarmshare.scheduler.SunriseScheduler;
+import com.frysksoft.alarmshare.services.MoonlightService;
+import com.frysksoft.alarmshare.services.SunriseService;
+import com.frysksoft.alarmshare.utils.Networking;
+import com.frysksoft.alarmshare.utils.SingletonServices;
+import com.frysksoft.alarmshare.utils.intents.IntentExtras;
 
 public class Main extends AppCompatActivity {
     ImageView mIcon;
@@ -157,7 +157,7 @@ public class Main extends AppCompatActivity {
             public void run() {
                 try {
                     // Turn off the light for the selected zone
-                    SingletonServices.getMilightAPI(Main.this).fadeOut();
+                    SingletonServices.getMQTT(Main.this).fadeOut();
                 }
                 catch (Exception exc) {
                     // Log errors to logcat

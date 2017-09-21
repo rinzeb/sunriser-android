@@ -1,4 +1,4 @@
-package com.eladnava.sunriser.utils;
+package com.frysksoft.alarmshare.utils;
 
 import android.app.AlarmManager;
 import android.app.NotificationManager;
@@ -8,36 +8,30 @@ import android.net.ConnectivityManager;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
-import com.eladnava.milight.api.MilightAPI;
-import com.eladnava.sunriser.config.Logging;
+import com.frysksoft.alarmshare.config.Logging;
 
 public class SingletonServices {
-    private static MilightAPI mMilightAPI;
+    private static MqttManager mMQTT;
     private static AlarmManager mAlarmManager;
     private static SharedPreferences mSharedPreferences;
     private static ConnectivityManager mConnectivityManager;
     private static NotificationManager mNotificationManager;
 
-    public static void resetMilightAPI() {
-        // Forget the current instance of the API (in case the router address / zone changed)
-        mMilightAPI = null;
-    }
-
-    public static MilightAPI getMilightAPI(Context context) {
+    public static MqttManager getMQTT(Context context) {
         // First time?
-        if (mMilightAPI == null) {
+        if (mMQTT == null) {
             try {
                 // Instantiate a new instance of the API client
-                mMilightAPI = new MilightAPI(context, AppPreferences.getMiLightHost(context), AppPreferences.getMiLightPort(context), AppPreferences.getMiLightZone(context));
+                mMQTT = new MqttManager(context, AppPreferences.getMqttHost(context), AppPreferences.getMqttPort(context));
             }
             catch(Exception err) {
-                // Log to console and return null (this should never occur since we always provide a valid zone integer)
-                Log.e(Logging.TAG, "Milight API instantiation failed", err);
+                // Log to console and return null
+                Log.e(Logging.TAG, "MQTT instantiation failed", err);
             }
         }
 
         // Return cached instance
-        return mMilightAPI;
+        return mMQTT;
     }
 
     public static SharedPreferences getSharedPreferences(Context context) {

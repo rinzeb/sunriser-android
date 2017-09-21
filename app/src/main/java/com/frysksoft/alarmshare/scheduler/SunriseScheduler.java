@@ -1,4 +1,4 @@
-package com.eladnava.sunriser.scheduler;
+package com.frysksoft.alarmshare.scheduler;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -7,15 +7,15 @@ import android.content.Intent;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.eladnava.sunriser.alarms.SystemClock;
-import com.eladnava.sunriser.config.Logging;
-import com.eladnava.sunriser.config.Notifications;
-import com.eladnava.sunriser.receivers.HideMoonlightReminder;
-import com.eladnava.sunriser.receivers.ShowMoonlightReminder;
-import com.eladnava.sunriser.services.SunriseService;
-import com.eladnava.sunriser.utils.AppPreferences;
-import com.eladnava.sunriser.utils.SingletonServices;
-import com.eladnava.sunriser.utils.formatters.CountdownFormatter;
+import com.frysksoft.alarmshare.alarms.SystemClock;
+import com.frysksoft.alarmshare.config.Logging;
+import com.frysksoft.alarmshare.config.Notifications;
+import com.frysksoft.alarmshare.receivers.HideMoonlightReminder;
+import com.frysksoft.alarmshare.receivers.ShowMoonlightReminder;
+import com.frysksoft.alarmshare.services.SunriseService;
+import com.frysksoft.alarmshare.utils.AppPreferences;
+import com.frysksoft.alarmshare.utils.SingletonServices;
+import com.frysksoft.alarmshare.utils.formatters.CountdownFormatter;
 
 public class SunriseScheduler {
     public static void rescheduleSunriseAlarm(Context context, boolean showToast) {
