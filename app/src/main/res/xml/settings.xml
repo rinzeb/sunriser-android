@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/action_settings">
-    <PreferenceCategory android:title="@string/sunriser">
+    <PreferenceCategory android:title="@string/alarmshare">
         <CheckBoxPreference
             android:defaultValue="@string/enable_pref_default"
             android:key="@string/enable_pref"
@@ -9,14 +9,6 @@
             android:title="@string/enable" />
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/sunrise">
-        <ListPreference
-            android:defaultValue="@string/sunrise_color_default"
-            android:dependency="@string/enable_pref"
-            android:entries="@array/color_names"
-            android:entryValues="@array/color_values"
-            android:key="@string/sunrise_color_pref"
-            android:summary="@string/sunrise_color_desc"
-            android:title="@string/sunrise_color" />
         <EditTextPreference
             android:defaultValue="@string/sunrise_headstart_default"
             android:dependency="@string/enable_pref"
@@ -24,13 +16,6 @@
             android:key="@string/sunrise_headstart_pref"
             android:summary="@string/sunrise_headstart_desc"
             android:title="@string/sunrise_headstart" />
-        <EditTextPreference
-            android:defaultValue="@string/sunrise_duration_default"
-            android:dependency="@string/enable_pref"
-            android:inputType="number"
-            android:key="@string/sunrise_duration_pref"
-            android:summary="@string/sunrise_duration_desc"
-            android:title="@string/sunrise_duration" />
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/daylight">
         <CheckBoxPreference
@@ -50,14 +35,6 @@
             android:title="@string/daylight_duration" />
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/moonlight">
-        <ListPreference
-            android:defaultValue="@string/moonlight_color_default"
-            android:dependency="@string/enable_pref"
-            android:entries="@array/color_names"
-            android:entryValues="@array/color_values"
-            android:key="@string/moonlight_color_pref"
-            android:summary="@string/moonlight_color_desc"
-            android:title="@string/moonlight_color" />
         <EditTextPreference
             android:inputType="number"
             android:defaultValue="@string/moonlight_brightness_default"
@@ -79,14 +56,6 @@
             android:title="@string/moonlight_reminder" />
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/milight">
-        <ListPreference
-            android:defaultValue="@string/zone_default"
-            android:dependency="@string/enable_pref"
-            android:entries="@array/zone_titles"
-            android:entryValues="@array/zone_values"
-            android:key="@string/zone_pref"
-            android:summary="@string/zone_desc"
-            android:title="@string/zone" />
         <EditTextPreference
             android:defaultValue="@string/host_default"
             android:dependency="@string/enable_pref"
@@ -100,5 +69,18 @@
             android:key="@string/port_pref"
             android:summary="@string/port_desc"
             android:title="@string/port" />
+        <EditTextPreference
+            android:defaultValue="@string/user_default"
+            android:dependency="@string/enable_pref"
+            android:key="@string/user_pref"
+            android:summary="@string/user_desc"
+            android:title="@string/user" />
+        <EditTextPreference
+            android:defaultValue="@string/password_default"
+            android:dependency="@string/enable_pref"
+            android:inputType="textPassword"
+            android:key="@string/password_pref"
+            android:summary="@string/password_desc"
+            android:title="@string/password" />
     </PreferenceCategory>
 </PreferenceScreen>

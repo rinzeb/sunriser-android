@@ -37,8 +37,11 @@ public class Main extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        // Force Wi-Fi connection to use the app
-        requireWiFiConnectivity();
+        // Force internet connection to use the app
+        requireConnectivity();
+
+        // Force mqtt connection
+        requireMqtt();
 
         // Check for a scheduled system alarm
         requireScheduledSystemAlarm();
@@ -87,22 +90,41 @@ public class Main extends AppCompatActivity {
         startService(testSunrise);
     }
 
-    private void requireWiFiConnectivity() {
-        // No Wi-Fi connection?
-        if (!Networking.isWiFiConnected(this)) {
+    private void requireConnectivity() {
+        // No connection?
+        if (!Networking.isConnected(this)) {
             // Show error dialog
             new AlertDialog.Builder(this)
-                    .setTitle(R.string.connect_wifi)
-                    .setMessage(R.string.connect_wifi_desc)
+                    .setTitle(R.string.connect_internet)
+                    .setMessage(R.string.connect_internet_desc)
                     .setPositiveButton(R.string.ok, null)
                     .setOnDismissListener(new DialogInterface.OnDismissListener() {
                         @Override
                         public void onDismiss(DialogInterface dialog) {
-                            // Still no Wi-Fi connection?
-                            if (!Networking.isWiFiConnected(Main.this)) {
+                            // Still no connection?
+                            if (!Networking.isConnected(Main.this)) {
                                 // Goodbye
                                 finish();
                             }
+                        }
+                    })
+                    .create().show();
+        }
+    }
+
+    private void requireMqtt() {
+        if (!SingletonServices.getMQTT(Main.this).isConnected()) {
+            // Show error dialog
+            new AlertDialog.Builder(this)
+                    .setTitle(R.string.connect_mqtt)
+                    .setMessage(R.string.connect_mqtt_desc)
+                    .setPositiveButton(R.string.ok, null)
+                    .setNegativeButton(android.R.string.cancel, null)
+                    .setOnDismissListener(new DialogInterface.OnDismissListener() {
+                        @Override
+                        public void onDismiss(DialogInterface dialog) {
+                            // Still no connection?
+                            startActivity(new Intent(Main.this, Settings.class));
                         }
                     })
                     .create().show();

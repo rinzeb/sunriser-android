@@ -101,12 +101,14 @@ public class SunriseService extends Service {
                 sunriseDurationSeconds = (sunriseDurationSeconds < 1) ? 1 : sunriseDurationSeconds;
                 sunriseDurationSeconds = (sunriseDurationSeconds > 3600) ? 3600 : sunriseDurationSeconds;
 
-                // Turn on the bulb
-                mMQTT.fadeOn();
+                // Set the sunrise duration
+                mMQTT.setDuration(sunriseDurationSeconds);
 
+                // Turn on the bulb
+                mMQTT.startWake();
 
                 // Write update interval to log
-                Log.d(Logging.TAG, "Starting sunrise, duration " + sunriseDurationSeconds + "ms");
+                Log.d(Logging.TAG, "Starting sunrise, duration " + sunriseDurationSeconds + "m");
 
                 // Wait till finish
                 Thread.sleep((sunriseDurationSeconds * 1000) + 10000);

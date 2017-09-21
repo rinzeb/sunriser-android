@@ -2,5 +2,5 @@ package com.frysksoft.alarmshare.config;
 
 public class Logging {
     // Logcat log tag for all app logs
-    public static final String TAG = "Sunriser";
+    public static final String TAG = "AlarmShare";
 }

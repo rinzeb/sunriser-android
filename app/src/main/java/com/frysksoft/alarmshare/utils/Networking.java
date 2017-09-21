@@ -24,4 +24,21 @@ public class Networking {
         // Not connected via Wi-Fi
         return false;
     }
+
+    public static boolean isConnected(Context context) {
+        // Get system connectivity manager
+        ConnectivityManager cm = SingletonServices.getConnectivityManager(context);
+
+        // Attempt to acquire active network info
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+
+        // May be null in case of no reception
+        if (activeNetwork != null) {
+            // We're good!
+            return true;
+        }
+
+        // Not connected
+        return false;
+    }
 }

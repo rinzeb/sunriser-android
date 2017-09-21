@@ -19,10 +19,10 @@ public class SingletonServices {
 
     public static MqttManager getMQTT(Context context) {
         // First time?
-        if (mMQTT == null) {
+        if (mMQTT == null || !mMQTT.isConnected()) {
             try {
                 // Instantiate a new instance of the API client
-                mMQTT = new MqttManager(context, AppPreferences.getMqttHost(context), AppPreferences.getMqttPort(context));
+                mMQTT = new MqttManager(context, AppPreferences.getMqttHost(context), AppPreferences.getMqttPort(context), AppPreferences.getMqttUser(context), AppPreferences.getMqttPassword(context));
             }
             catch(Exception err) {
                 // Log to console and return null

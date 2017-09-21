@@ -5,18 +5,20 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/sunriser"
+        android:label="@string/alarmshare"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
         <!-- Main Activity -->
         <activity
             android:name="com.frysksoft.alarmshare.activities.Main"
-            android:label="@string/sunriser"
+            android:label="@string/alarmshare"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -57,5 +59,6 @@
         <service android:name="com.frysksoft.alarmshare.services.SunriseService" />
         <service android:name="com.frysksoft.alarmshare.services.MoonlightService" />
         <service android:name="com.frysksoft.alarmshare.services.KillDaylightService" />
+        <service android:name="org.eclipse.paho.android.service.MqttService" />
     </application>
 </manifest>

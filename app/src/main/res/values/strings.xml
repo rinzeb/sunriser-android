@@ -1,10 +1,10 @@
 <resources>
     <!-- App -->
-    <string name="sunriser">Sunriser</string>
+    <string name="alarmshare">AlarmShare</string>
 
     <!-- Main Activity -->
     <string name="welcome">Wake up like a boss</string>
-    <string name="welcome_desc">Sunriser will gradually wake you up before your next scheduled alarm. Sweet dreams!</string>
+    <string name="welcome_desc">AlarmShare will send your upcoming scheduled alarm to MQTT. Sweet dreams!</string>
 
     <!-- Main Menu -->
     <string name="action_test">Test</string>
@@ -29,9 +29,6 @@
 
     <!-- Sunrise Color-->
     <string name="sunrise_color">Sunrise Color</string>
-    <string name="sunrise_color_desc" formatted="false">The color of the bulb at sunrise</string>
-    <string name="sunrise_color_pref">sunrise_color</string>
-    <string name="sunrise_color_default">-1</string>
 
     <!-- Sunrise Duration -->
     <string name="sunrise_duration">Sunrise Duration</string>
@@ -43,7 +40,7 @@
     <string name="sunrise_headstart">Sunrise Headstart</string>
     <string name="sunrise_headstart_desc">Start the sunrise X minutes before the alarm clock</string>
     <string name="sunrise_headstart_pref">sunrise_headstart</string>
-    <string name="sunrise_headstart_default">30</string>
+    <string name="sunrise_headstart_default">15</string>
 
     <!-- Daylight Forever -->
     <string name="daylight_forever">Daylight Forever</string>
@@ -55,13 +52,7 @@
     <string name="daylight_duration">Daylight Duration</string>
     <string name="daylight_duration_desc">Leave the light on for X minutes after sunrise ends</string>
     <string name="daylight_duration_pref">daylight_duration</string>
-    <string name="daylight_duration_default">20</string>
-
-    <!-- Moonlight Color -->
-    <string name="moonlight_color">Moonlight Color</string>
-    <string name="moonlight_color_desc" formatted="false">The color of the bulb in moonlight mode</string>
-    <string name="moonlight_color_pref">moonlight_color</string>
-    <string name="moonlight_color_default">-1</string>
+    <string name="daylight_duration_default">30</string>
 
     <!-- Moonlight Brightness -->
     <string name="moonlight_brightness">Moonlight Brightness</string>
@@ -86,27 +77,17 @@
     <string name="moonlight_reminder_notification_desc">Good night, sweet dreams!</string>
     <string name="moonlight_reminder_notification_action">Enable Moonlight Mode</string>
 
-    <!-- MiLight Zone -->
-    <string name="zone">Light Zone</string>
-    <string name="zone_desc">Choose the desired light zone</string>
-    <string name="zone_pref">milight_zone</string>
-    <string name="zone_default">1</string>
-
-    <!-- MiLight Host -->
-    <string name="host">Router Host</string>
+    <!-- MQTT Host -->
+    <string name="host">MQTT Host</string>
     <string name="host_desc">Enter the hostname of the mqtt router</string>
-    <string name="host_pref">MQTT</string>
-    <string name="host_default">255.255.255.255</string>
+    <string name="host_pref">MQTT_HOST</string>
+    <string name="host_default">192.168.1.1</string>
 
-    <!-- MiLight Port -->
-    <string name="port">Router Port</string>
+    <!-- MQTT Port -->
+    <string name="port">MQTT Port</string>
     <string name="port_desc">Enter the port number of the mqtt router</string>
-    <string name="port_pref">MQTT</string>
-    <string name="port_default">8899</string>
-
-    <!-- Wifi Error Dialog -->
-    <string name="connect_wifi">Connect to Wi-Fi</string>
-    <string name="connect_wifi_desc">Please connect to the same Wi-Fi network as your MiLight router.</string>
+    <string name="port_pref">MQTT_PORT</string>
+    <string name="port_default">1883</string>
 
     <!-- No Alarms Error Dialog -->
     <string name="no_alarms">No Alarms</string>
@@ -114,64 +95,17 @@
 
     <!-- Dialog Buttons -->
     <string name="ok">OK</string>
+    <string name="user_pref">MQTT_USER</string>
+    <string name="password_pref">MQTT_PASSWORD</string>
+    <string name="user_default" />
+    <string name="password_default" />
+    <string name="user_desc">Username for the MQTT connection</string>
+    <string name="user">Username</string>
+    <string name="password_desc">Password for the MQTT connection</string>
+    <string name="password">Password</string>
+    <string name="connect_internet">No internet connection</string>
+    <string name="connect_internet_desc">Connect to the internet in order to send the scheduled alarm</string>
+    <string name="connect_mqtt">No MQTT connection</string>
+    <string name="connect_mqtt_desc">Set the correct MQTT settings</string>
 
-    <!-- Zone Selection Titles -->
-    <string-array name="zone_titles">
-        <item>All Zones</item>
-        <item>Zone 1</item>
-        <item>Zone 2</item>
-        <item>Zone 3</item>
-        <item>Zone 4</item>
-    </string-array>
-
-    <!-- Zone Selection Values -->
-    <string-array name="zone_values">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-    </string-array>
-
-    <!-- Color Selection Names -->
-    <string-array name="color_names">
-        <item>White (Default)</item>
-        <item>Violet</item>
-        <item>Royal Blue</item>
-        <item>Baby Blue</item>
-        <item>Aqua</item>
-        <item>Mint</item>
-        <item>Seafoam Green</item>
-        <item>Green</item>
-        <item>Lime Green</item>
-        <item>Yellow</item>
-        <item>Yellow Orange</item>
-        <item>Orange</item>
-        <item>Red</item>
-        <item>Pink</item>
-        <item>Fuchsia</item>
-        <item>Lilac</item>
-        <item>Lavender</item>
-    </string-array>
-
-    <!-- Color Selection Values -->
-    <string-array name="color_values">
-        <item>-1</item>
-        <item>0</item>
-        <item>16</item>
-        <item>32</item>
-        <item>48</item>
-        <item>64</item>
-        <item>80</item>
-        <item>96</item>
-        <item>112</item>
-        <item>128</item>
-        <item>144</item>
-        <item>160</item>
-        <item>176</item>
-        <item>192</item>
-        <item>208</item>
-        <item>224</item>
-        <item>240</item>
-    </string-array>
 </resources>
